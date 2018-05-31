@@ -11,6 +11,11 @@ alias ic="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/7-Projects"
 alias be='bundle exec'
 alias ber='bundle exec rspec'
 alias bers='bundle exec rails server'
+alias bec="DRIVER=chrome bundle exec cucumber"
+alias features="DRIVER=chrome bundle exec cucumber features/"
+alias ga="git add"
+alias gap="git add -p"
+alias rad="cd ~/Projects/reviews-and-advice/"
 
 function prompt {
   local BLACK="\[\033[0;30m\]"
