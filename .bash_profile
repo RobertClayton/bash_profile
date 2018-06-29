@@ -5,17 +5,32 @@
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
-alias ls='ls -GFh'
-alias ll='ls -l'
+alias ls="ls -GFh"
+alias lsl="ls -l"
+alias lsa="ls -a"
 alias ic="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/7-Projects"
-alias be='bundle exec'
-alias ber='bundle exec rspec'
-alias bers='bundle exec rails server'
+alias be="bundle exec"
+alias ber="bundle exec rspec"
+alias bers="bundle exec rails server"
 alias bec="DRIVER=chrome bundle exec cucumber"
 alias features="DRIVER=chrome bundle exec cucumber features/"
 alias ga="git add"
 alias gap="git add -p"
+alias gs="git status"
+alias gcm="git commit -m"
+alias gpl="git pull origin"
+alias gps="git push origin"
+alias gl="git log"
+alias glo="git log --oneline"
 alias rad="cd ~/Projects/reviews-and-advice/"
+alias weather="curl wttr.in"
+alias bashp="atom ~/.bash_profile"
+alias q="exit"
+alias h="history"
+alias p="cat"
+alias home="cd ~"
+alias mine="rmine ."
+alias atom="atom ."
 
 function prompt {
   local BLACK="\[\033[0;30m\]"
