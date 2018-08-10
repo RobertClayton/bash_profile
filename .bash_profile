@@ -14,25 +14,29 @@ alias be="bundle exec"
 alias ber="bundle exec rspec"
 alias bers="bundle exec rails server"
 alias bec="DRIVER=chrome bundle exec cucumber"
+alias tailserver="cd ~/Projects/reviews-and-advice/log/; tail -f development.log"
+alias bec="DRIVER=chrome bundle exec cucumber"
 alias features="DRIVER=chrome bundle exec cucumber features/"
 alias rad="cd ~/Projects/reviews-and-advice/"
-alias runupload="cd ~/Projects/reviews-and-advice/services-uploader/; mvn -Dspring.profiles.active=development spring-boot:run"
-alias rakereset="cd ~/Projects/reviews-and-advice/; bundle exec rake services:reset"
-alias tailupload="cd ~/Projects/reviews-and-advice/; tail -f application.log"
+alias resetdata="cd ~/Projects/reviews-and-advice/; bundle exec rake services:reset"
+alias resetuploaders="cd ~/Projects/reviews-and-advice/; redis-cli del transaction_service:current_transaction"
 alias startredis="cd ~; redis-server"
-alias tailredis="cd ~; redis-cli monitor"
 alias startelastic="cd ~/Projects/reviews-and-advice/; elasticsearch"
-alias runmedis="cd ~/Projects/medis; npm run electron"
+alias startupload="cd ~/Projects/reviews-and-advice/services-uploader/; mvn -Dspring.profiles.active=development spring-boot:run";
+alias startmedis="cd ~/Projects/medis; npm run electron"
+alias tailredis="cd ~; redis-cli monitor"
+alias tailupload="cd ~/Projects/reviews-and-advice/log/uploader/; tail -f application.log"
 alias ga="git add"
 alias gap="git add -p"
-alias gs="git status"
+alias gs="git status -uno"
 alias gco="git checkout"
 alias gcm="git commit -m"
-alias gpl="git pull origin"
-alias gps="git push origin"
+alias gpl="git pull"
+alias gps="git push"
 alias gl="git log"
 alias glo="git log --oneline"
 alias weather="curl wttr.in"
+alias temp="curl wttr.in"
 alias bashp="atom ~/.bash_profile"
 alias q="exit"
 alias h="history"
@@ -72,6 +76,7 @@ current_branch() {
 other_branches() {
      git branch 2> /dev/null | sed -e '/^*/d'
 }
+
 export PS1="\n$RED\u $PURPLE@ $GREEN\w \n  $CYANBOLD\$(current_branch)\n$CYAN\$(other_branches)\n $YELLOW\D{%F %T} $BLUE[\#] → $RESETCOLOR"
 export PS2=" | → $RESETCOLOR"
 }
@@ -83,3 +88,4 @@ prompt
 # Added by GraphLab Create Launcher v3.0.1
 export PATH="/Users/rclayto/anaconda/bin:$PATH"
 
+export PUMA_WORKER_TIMEOUT=9999999999999999999999999
