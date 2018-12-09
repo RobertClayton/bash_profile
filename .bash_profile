@@ -14,8 +14,6 @@ alias be="bundle exec"
 alias ber="bundle exec rspec"
 alias bers="bundle exec rails server"
 alias bec="DRIVER=chrome bundle exec cucumber"
-alias tailserver="cd ~/Projects/reviews-and-advice/log/; tail -f development.log"
-alias bec="DRIVER=chrome bundle exec cucumber"
 alias features="DRIVER=chrome bundle exec cucumber features/"
 alias rad="cd ~/Projects/reviews-and-advice/"
 alias resetdata="cd ~/Projects/reviews-and-advice/; bundle exec rake services:reset"
@@ -26,6 +24,8 @@ alias startupload="cd ~/Projects/reviews-and-advice/services-uploader/; mvn -Dsp
 alias startmedis="cd ~/Projects/medis; npm run electron"
 alias tailredis="cd ~; redis-cli monitor"
 alias tailupload="cd ~/Projects/reviews-and-advice/log/uploader/; tail -f application.log"
+alias tailserver="cd ~/Projects/reviews-and-advice/log/; tail -f development.log"
+alias startsidekiq="bundle exec sidekiq -c 5 -q default -q published_edition_queue"
 alias ga="git add"
 alias gap="git add -p"
 alias gs="git status -uno"
@@ -45,7 +45,7 @@ alias home="cd ~"
 alias mine="rmine ."
 alias atom="atom ."
 alias checkport="lsof -i tcp:"
-alias killpid="kill -9 "
+alias killpid="kill -9 " # followed by PID number e.g.: 'killpud 13822'
 
 # make sure to add .git-completion.bash to home(~)
 if [ -f ~/.git-completion.bash ]; then
